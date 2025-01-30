@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    
+</head>
+<body>
+    <div class="container" >
+        <div class="top">
+            <div class="topleft">
+                <!-- <img class="srmseal" src="Srmseal copy.png" alt="">
+                <h1 class="toph1" >SOSRM</h1> -->
+                <img src="Untitled644_20250130013639.png" class="logo" alt="">
+            </div>
+            <i class="fa-solid fa-bars" style="color: white; margin-right: 20px;" onclick="backtosos()"></i>
+        </div>
+        <!-- <p>Press the button below to send an SOS alert.</p> -->
+
+        <div class="soscontain" id="soscontain">
+            <div class="concentric">
+                <button class="sos-button" onclick="sendSOS();">SOS</button>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------- -->
+
+        <div id="map" class="map-container">
+            <div class="map" id="map1" style="display: none;">
+                <!-- <img id="sos" src="bla.png" alt=""> -->
+                <img id="sos" src="bla1.png" alt="">
+            </div>
+            <div class="map" id="map2" style="display: none;">
+                <img id="carcar" src="bla.png" alt="">
+            </div>
+            <div class="map1" id="map3" style="display: none;">
+                <button class="contacts">
+                    <span class="name">Arjun</span>
+                    <span class="place">"T. Nagar"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Priya</span>
+                    <span class="place">"Velachery"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Karthik</span>
+                    <span class="place">"Adyar"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Sneha</span>
+                    <span class="place">"Anna Nagar"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Rahul</span>
+                    <span class="place">"Tambaram"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Divya</span>
+                    <span class="place">"Mylapore"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Sanjay</span>
+                    <span class="place">"Guindy"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Meera</span>
+                    <span class="place">"Besant Nagar"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Vijay</span>
+                    <span class="place">"Thiruvanmiyur"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Nisha</span>
+                    <span class="place">"Nungambakkam"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Ravi</span>
+                    <span class="place">"Kotturpuram"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Lakshmi</span>
+                    <span class="place">"Pallikaranai"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Suresh</span>
+                    <span class="place">"Kodambakkam"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Anjali</span>
+                    <span class="place">"Royapettah"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Kavi</span>
+                    <span class="place">"Madhavaram"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Simran</span>
+                    <span class="place">"Perambur"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Arvind</span>
+                    <span class="place">"Choolaimedu"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Ritika</span>
+                    <span class="place">"Saidapet"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Hari</span>
+                    <span class="place">"Kilpauk"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Pooja</span>
+                    <span class="place">"Mount Road"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Mohan</span>
+                    <span class="place">"Purasawalkam"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Swathi</span>
+                    <span class="place">"Egmore"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Ajay</span>
+                    <span class="place">"Chetpet"</span>
+                </button>
+                <button class="contacts">
+                    <span class="name">Kiran</span>
+                    <span class="place">"St. Thomas Mount"</span>
+                </button>
+            </div>
+            
+        </div>
+
+        <!-- ------------------------------------------- -->
+        <div class="suv-container">
+            <button class="subbuttons" id="nearbyBuddyButton" onclick="NearByBuddyButton()"><i class="fa-solid fa-handshake-angle"></i></button>
+            <button class="subbuttons" id="SafeCap" onclick="SafeCab()"><i class="fa-solid fa-taxi"></i></button>
+        </div>
+        <div class="info-section">
+            <h2 style="color: white;">Emergency Contacts</h2>
+            <div class="info-card">
+                <i class="fa-solid fa-phone" onclick="phoneNo1()"></i>
+                <span>John Doe - 123-456-7890</span>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-phone" onclick="phoneNo1()"></i>
+                <span>Jane Smith - 987-654-3210</span>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="bottom-nav">
+                <i class="fa-solid fa-camera"></i>
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>            
+        </div>
+    </div>
+   
+
+
+    <script>
+
+        
+        function requestLocation() {
+          const userChoice = confirm("Do you want to allow access to your location?");
+          console.log("userChoice");
+          
+          if (userChoice) {
+            if ("geolocation" in navigator) {
+              navigator.geolocation.getCurrentPosition(
+                position => {
+                  alert(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+                },
+                error => {
+                  alert("Error getting location: " + error.message);
+                }
+              );
+            } else {
+              alert("Geolocation is not supported by your browser.");
+            }
+          } else {
+            alert("You denied location access.");
+          }
+        }
+      </script>
+
+
+    <script>
+
+        let map = document.getElementById("map");
+        let map1 = document.getElementById("map1");
+        let map2 = document.getElementById("map2");
+        let map3 = document.getElementById("map3");
+        let sos = document.getElementById("soscontain");
+
+        function backtosos(){
+            map1.style.display = 'none';
+            map2.style.display = 'none';
+            map3.style.display = 'none';
+            sos.style.display = 'flex';
+        }
+
+        function sendSOS() {
+            // alert('SOS alert sent!');
+            console.log('SOS alert sent!');
+            map.style.display = 'flex';
+            map1.style.display = 'block';
+            map2.style.display = 'none';
+            map3.style.display = 'none';
+            sos.style.display = 'none';
+            
+        }
+        function NearByBuddyButton() {
+            // alert('Nearby Buddy alert sent!');
+            console.log('Nearby Buddy alert sent!')
+            map.style.display = 'flex';
+            map2.style.display = 'block';
+            map1.style.display = 'none';
+            map3.style.display = 'none';
+            sos.style.display = 'none';
+
+        }
+        function SafeCab() {
+            // alert('Safe Cab alert sent!');
+            console.log('Safe Cab alert sent!')
+            map.style.display = 'flex';
+            map3.style.display = 'block';
+            map2.style.display = 'none';
+            map1.style.display = 'none';
+            sos.style.display = 'none';
+        }
+        function phoneNo1() {
+            // alert('Called Phone Number 1');
+            console.log('Phone No. 1 called!')
+        }
+        function phoneNo2() {
+            // alert('Called Phone Number 2');
+            console.log('Phone No. 2 called!')
+        }
+    </script>
+</body>
+</html>
