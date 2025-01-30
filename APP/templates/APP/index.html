@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SecureWay Images</h1>
+    <div class="container">
+        {% for secureway in secureways %}
+            <div class="box">
+                <h3>{{ secureway.category }}</h3>
+                {% for image in secureway.images.all %}
+                    <img src="{{ image.image.url }}" alt="SecureWay Image">
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1>SOS Contacts</h1>
+    <button onClick="listen()">bur</button>
+    <div class="container shit" style={"display: none"}>
+        {% for sos in sos_list %}
+            <div class="box">
+                <h3>Phone: {{ sos.phone_number }}</h3>
+                {% for image in sos.images.all %}
+                    <img src="{{ image.image.url }}" alt="SOS Image">
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+<script>
+  function listen() {
+  x=document.getElememtByClass("shit");
+  x.display("flex");}
+</script>
+</html>
+
